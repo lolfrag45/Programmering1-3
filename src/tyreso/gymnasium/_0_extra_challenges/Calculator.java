@@ -1,5 +1,7 @@
 package tyreso.gymnasium._0_extra_challenges;
 
+import java.util.Scanner;
+
 /**
  *                          *******************
  *                          ***  CALCULATOR ***
@@ -47,5 +49,73 @@ package tyreso.gymnasium._0_extra_challenges;
  * -Det finns ett inbyggt sätt att ta tid i Java som du kan använda, men det är ju A-bonus(I), så du får
  * ta reda på hur själv.
  */
-public class Calculator {
+public class Calculator
+{
+    public static void main(String[] args)
+    {
+        int num1 = 0;
+        int num2 = 0;
+        char operator;
+        int answer = 0;
+
+        Scanner scanObject = new Scanner(System.in);           //create a new scanner object
+        while (true){
+        System.out.println("please enter first number: ");     //Declares output value
+        num1 = scanObject.nextInt();
+        System.out.println("Please enter second number: ");
+        num2 = scanObject.nextInt();
+        System.out.println("What operation? ");
+        operator = scanObject.next().charAt(0);
+
+            switch (operator) {
+                case '+':
+                    System.out.println("in '+' switch statement");
+                    answer = addition(num1, num2);             //Builds a switch statement
+                    break;
+                case '-': answer = subtraction(num1, num2);
+                    System.out.println("in '-' switch statement");
+                    break;
+                case '*': answer = multiplikation(num1, num2);
+                    System.out.println("in '*' switch statement");
+                    break;
+                case '/': answer = divition(num1, num2);
+                    System.out.println("in '/' switch statement");
+                    break;
+                case '^': answer = power(num1, num2);
+            }
+            System.out.println(num1 + " " + operator + " " + num2 + " = " + answer);    //Allows outvalue to display
+        }
+
+
+    }
+
+
+
+
+    private static int addition(int num1, int num2) {
+        int result;     //initialisera variabeln result
+        result = num1 + num2;
+        return result;
+    }
+    private static int subtraction(int num1, int num2) {
+        int result;
+        result = num1 - num2;
+        return result;
+    }
+    private static int multiplikation(int num1, int num2) {
+        int result;
+        result = num1 * num2;
+        return result;
+    }
+    private static int divition(int num1, int num2) {
+        int result;
+        result = num1 / num2;
+        return result;
+    }
+    private static int power(int num1, int num2) {
+        int result;
+        result = num1 ^ num2;
+        return result;
+    }
 }
+
